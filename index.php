@@ -18,6 +18,7 @@ $fullUrl = array_key_exists('url', $_GET) ? $_GET['url'] : '';
 $url = explode('/', $fullUrl)[0];
 
 if($url == "getToken"){
+    echo file_get_contents('https://api.ipify.org?format=json');
     echo json_encode([
         "token" => JWT::encode(1,0)
     ]);
