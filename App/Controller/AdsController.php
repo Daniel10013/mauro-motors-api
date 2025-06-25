@@ -80,7 +80,7 @@ class AdsController extends Controller
             Response::badRequest('Dados invalidos para a busca');
         }
 
-        $data = $this->business->details($id);
+        $data = $this->business->details((int)$id);
         Response::send([
             "status" => "success",
             "data" => $data
