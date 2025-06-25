@@ -29,7 +29,7 @@ class UserModel extends Model {
 
     public function getById($userId): array{
         $subQuery = "SELECT user_id, phone FROM phones WHERE user_id = :user_id ORDER BY id ASC LIMIT 1";
-        $query = "SELECT *, p.phone, i.file_name FROM {$this->table} AS u JOIN($subQuery) AS p ON u.id = p.user_id JOIN user_images AS i ON u.id = i.user_id WHERE u.id = :user_id";
+        $query = "SELECT u.*, p.phone, i.file_name FROM {$this->table} AS u JOIN($subQuery) AS p ON u.id = p.user_id LEFT JOIN user_images AS i ON u.id = i.user_id WHERE u.id = :user_id";
         return $this->select($query, ["user_id" => $userId]);
     }
 
