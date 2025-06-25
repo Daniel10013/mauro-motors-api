@@ -76,7 +76,7 @@ class AdsController extends Controller
     public function details(): void
     {
         $id = Url::segment(1);
-        if(empty($id) || intval($id) == false){
+        if(empty($id)){
             Response::badRequest('Dados invalidos para a busca');
         }
 
