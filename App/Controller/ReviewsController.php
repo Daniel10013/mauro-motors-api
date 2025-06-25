@@ -42,7 +42,7 @@ class ReviewsController extends Controller {
     }
 
     public function getById(): void {
-        $reviewId = Url::segment(1);
+        $reviewId = Url::segment(0);
         if(empty($reviewId) == true ){
             Response::badRequest('Digite o ID da review que deseja visualizar');
         }
