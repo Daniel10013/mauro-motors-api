@@ -21,7 +21,7 @@ class SalesController extends Controller {
 
     public function get(){
         $userId = JWT::getSessionData('sub');
-        $type = Url::segment(1);
+        $type = Url::segment(2);
         if($type == "bought"){
             $cars = $this->business->getBoughtCars($userId);
         }else {
