@@ -51,7 +51,7 @@ class AdsBusiness extends Business{
         return $this->model->getAll();
     }
 
-    public function details(int $id): array {
+    public function details($id): array {
         return $this->model->getById($id);
     }
 

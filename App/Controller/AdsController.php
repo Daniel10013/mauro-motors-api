@@ -77,7 +77,8 @@ class AdsController extends Controller
     {
         $id = Url::segment(2);
         var_dump(Url::segment(1), is_integer(Url::segment(1)), 1);
-        var_dump(Url::segment(2), is_integer(Url::segment(2)), 2);
+        echo "<br>";
+        var_dump((int)($id), is_integer(Url::segment(2)), 2);
         if(empty($id)){
             Response::badRequest('Dados invalidos para a busca');
         }

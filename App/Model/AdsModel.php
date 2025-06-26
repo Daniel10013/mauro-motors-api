@@ -33,7 +33,7 @@ class AdsModel extends Model{
         return $this->select($query, []);
     }
 
-    public function getById(int $id): array {
+    public function getById($id): array {
         $query = "select * from ads_view where ad_id = :ad_id";
         return $this->select($query, ["ad_id" => $id]);
     }
