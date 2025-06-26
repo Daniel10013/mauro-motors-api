@@ -35,6 +35,7 @@ class AdsModel extends Model{
 
     public function getById($id): array {
         $query = "select * from ads_view where ad_id = :ad_id";
+        dd($query, ["ad_id" => $id]);
         return $this->select($query, ["ad_id" => $id]);
     }
 
