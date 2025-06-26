@@ -50,8 +50,8 @@ class UserController extends Controller
     public function getById(){
         $userId = JWT::getSessionData("sub");
         
-        if(Url::segment(1) != null && intval(Url::segment(1)) == true){
-            $userId = Url::segment(1);
+        if(Url::segment(2) != null && intval(Url::segment(2)) == true){
+            $userId = Url::segment(2);
         }
         $result = $this->business->getById($userId);
         Response::send([
