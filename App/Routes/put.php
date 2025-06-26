@@ -10,7 +10,7 @@ return [
         ]
     */
     "quizz" => [
-        "controller" => 'quizzController',
+        "controller" => 'QuizzController',
         "method" => 'update',
         "auth" => true
     ],
