@@ -85,5 +85,10 @@ return [
         "controller" => "UserController",
         "method" => "getUserImage",
         "auth" => true
+    ],
+    "get-by-user-id" => [
+        "controller" => "AddressController",
+        "method" => "getByUser",
+        "auth" => true
     ]
 ];

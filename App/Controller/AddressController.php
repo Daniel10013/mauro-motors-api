@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Lib\Url\Url;
 use App\Lib\Auth\JWT;
 use App\Lib\Response\Response;
 
@@ -18,6 +19,15 @@ class AddressController extends Controller {
 
     public function getById(){
         $userId = JWT::getSessionData("sub");
+        $result = $this->business->getById($userId);
+        Response::send([
+            "status" => "success",
+            "data" => $result
+        ]);
+    }
+
+    public function getByUser(){
+        $userId = (int)Url::segment(2);
         $result = $this->business->getById($userId);
         Response::send([
             "status" => "success",
